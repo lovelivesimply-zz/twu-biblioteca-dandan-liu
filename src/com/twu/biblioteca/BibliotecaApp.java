@@ -1,7 +1,11 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.com.twu.biblioteca.respository.*;
+import com.twu.biblioteca.entity.Book;
+import com.twu.biblioteca.entity.Movie;
+import com.twu.biblioteca.respository.BookRespository;
+import com.twu.biblioteca.respository.MenuRepository;
+import com.twu.biblioteca.respository.MovieRepository;
 
 import java.util.Iterator;
 import java.util.List;

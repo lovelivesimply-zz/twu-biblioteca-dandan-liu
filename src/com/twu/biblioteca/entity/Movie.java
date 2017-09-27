@@ -1,4 +1,4 @@
-package com.twu.biblioteca.com.twu.biblioteca.respository;
+package com.twu.biblioteca.entity;
 
 public class Movie {
     public String name;

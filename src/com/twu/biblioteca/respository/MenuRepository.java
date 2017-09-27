@@ -1,4 +1,4 @@
-package com.twu.biblioteca.com.twu.biblioteca.respository;
+package com.twu.biblioteca.respository;
 
 import java.util.ArrayList;
 import java.util.List;
