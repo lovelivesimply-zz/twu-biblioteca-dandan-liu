@@ -32,6 +32,13 @@ public class ExampleTest {
         log.clearLog();
         getMainMenu();
         assertEquals(log.getLog(),("List options:\n"+"BookList\n"));
-
+    }
+    @Test
+    public void should_return_movieList() {
+        log.clearLog();
+        movieList();
+        assertEquals(log.getLog(), ("MovieName:secondMovie MovieYear:2016 MovieDirector:secondDirector MovieRating:5\n"+
+                "MovieName:firstMovie MovieYear:2017 MovieDirector:firstDirector MovieRating:4\n"
+                ));
     }
 }

@@ -1,9 +1,7 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.com.twu.biblioteca.respository.Book;
-import com.twu.biblioteca.com.twu.biblioteca.respository.BookRespository;
-import com.twu.biblioteca.com.twu.biblioteca.respository.MenuRepository;
+import com.twu.biblioteca.com.twu.biblioteca.respository.*;
 
 import java.util.Iterator;
 import java.util.List;
@@ -32,16 +30,18 @@ public class BibliotecaApp {
             Object inputObject=scanner.next();
         }
         int menuId=scanner.nextInt();
-        while(menuId>2 || menuId<1){
+        while(menuId>3 || menuId<1){
             System.out.println("Select a valid option!");
             menuId=scanner.nextInt();
         }
 
         if(menuId==1){
             bookList();
-        }else{
-            returnBook();
         }
+        if(menuId==2){
+            movieList();
+        }
+
     }
     public static void getWelcomeMessage(){
         System.out.println("Welcome to the Biblioteca library!");
@@ -63,6 +63,27 @@ public class BibliotecaApp {
                 System.out.println("Thank you! Enjoy the book");
             }else{
                 System.out.println("That book is not available.");
+            }
+
+        }
+    }
+    public static void checkoutMovie(){
+        System.out.println("Please input the movieName you want to checkout:");
+        Scanner scanner=new Scanner(System.in);
+        while (scanner.hasNextLine()){
+            System.out.println("Please input the movieName you want to checkout:");
+            String movieName=scanner.nextLine();
+            if("Quit".equals(movieName)){
+                break;
+            }
+
+            MovieRepository movieRespository=new MovieRepository();
+            Map<String,Movie> movieTotal=movieRespository.getMovieRespository();
+            if(movieTotal.containsKey(movieName)){
+                movieTotal.remove(movieName);
+                System.out.println("Thank you! Enjoy the Movie");
+            }else{
+                System.out.println("That movie is not available.");
             }
 
         }
@@ -104,6 +125,19 @@ public class BibliotecaApp {
             Book book=mapEntry.getValue();
             System.out.println(": BookName:"+book.name+" BookAuthor:"+book.author+" BookPublishedTime:"+book.publishTime);
         }
+    }
+
+    public static  void movieList(){
+        MovieRepository movieRepository=new MovieRepository();
+        Map<String,Movie> movieTotal=movieRepository.getMovieRespository();
+        Iterator movieIterator=movieTotal.entrySet().iterator();
+        while(movieIterator.hasNext()){
+            Map.Entry<String,Movie> mapEntry=(Map.Entry<String,Movie>)movieIterator.next();
+            Movie movie=mapEntry.getValue();
+            System.out.println("MovieName:"+movie.getName()+" MovieYear:"+movie.getYear()+" MovieDirector:"+movie.getDirector()+" MovieRating:" +
+                    movie.getMovieRating());
+        }
+
     }
 }
 

@@ -1,0 +1,21 @@
+package com.twu.biblioteca.com.twu.biblioteca.respository;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MovieRepository {
+    Map<String,Movie> movieRespository=new HashMap<String, Movie>();
+    Map<String,Movie>  movieDB=new HashMap<String, Movie>();
+    public MovieRepository(){
+        movieRespository.put("firstBook",new Movie("firstMovie","2017","firstDirector","4"));
+        movieRespository.put("secondBook",new Movie("secondMovie","2016","secondDirector","5"));
+        movieDB.put("firstBook",new Movie("firstMovie","2017","firstDirector","4"));
+        movieDB.put("secondBook",new Movie("secondMovie","2016","secondDirector","5"));
+    }
+    public  Map<String,Movie> getMovieRespository(){
+        return  movieRespository;
+    }
+    public  Map<String,Movie> getMovieDB(){
+        return  movieDB;
+    }
+}
