@@ -12,8 +12,8 @@ public class UserRespository {
     }
 
     static {
-        User userFirst=new User("111-1111","1");
-        User userSecond=new User("111-2222","2");
+        User userFirst=new User("111-1111","1","emailAdressFirst","123456");
+        User userSecond=new User("111-2222","2","emailAdressSecond","123456");
         userRespository.put(userFirst.getLibraryNumber(),userFirst);
         userRespository.put(userSecond.getLibraryNumber(),userSecond);
     }
