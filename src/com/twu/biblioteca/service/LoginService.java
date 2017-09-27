@@ -9,7 +9,7 @@ import java.util.Map;
 public class LoginService {
 
 
-    public boolean login(User user){
+    public static boolean login(User user){
 
         Map<String,User> userRepository= UserRespository.getUserRespository();
         if(userRepository.containsKey(user.getLibraryNumber())){

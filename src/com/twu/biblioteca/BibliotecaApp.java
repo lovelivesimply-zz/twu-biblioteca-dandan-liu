@@ -3,6 +3,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.entity.Book;
 import com.twu.biblioteca.entity.Movie;
+import com.twu.biblioteca.fronted.LoginFrontPage;
 import com.twu.biblioteca.respository.BookRespository;
 import com.twu.biblioteca.respository.MenuRepository;
 import com.twu.biblioteca.respository.MovieRepository;
@@ -16,7 +17,7 @@ public class BibliotecaApp {
 
     public static void main(String[] args) {
 
-        getDefaultInfoAfterLogin();
+        LoginFrontPage.login();
     }
 
     public static void getDefaultInfoAfterLogin(){

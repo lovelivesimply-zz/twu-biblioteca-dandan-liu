@@ -14,6 +14,10 @@ public class User {
         this.phoneNumb=phoneNumb;
         this.phoneNumb=phoneNumb;
     }
+    public User(String libraryNumber,String password){
+        this.libraryNumber=libraryNumber;
+        this.password=password;
+    }
 
     public String getLibraryNumber() {
         return libraryNumber;
