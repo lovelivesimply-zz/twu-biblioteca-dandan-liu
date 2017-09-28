@@ -7,11 +7,9 @@ import java.util.Map;
 
 public class UserService {
 
-    public void getUserInf(String libraryNum){
+    public User getUserInf(String libraryNum){
         Map<String,User> userRespository=UserRespository.getUserRespository();
         User user=userRespository.get(libraryNum);
-        System.out.println("name: "+user.getName());
-        System.out.println("emailAddress: "+user.getEmailAdress());
-        System.out.println("phoneNumber: "+user.getPhoneNumb());
+       return user;
     }
 }

@@ -6,7 +6,12 @@ import com.twu.biblioteca.service.LoginService;
 
 public class LoginController {
 
-    public static boolean login(User user){
+    public  boolean login(User user){
         return  LoginService.login(user);
+    }
+    BookController bookController=new BookController();
+    MovieController movieController=new MovieController();
+    public  void getMenuDetail(int menuId){
+
     }
 }

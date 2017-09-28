@@ -19,26 +19,13 @@ public class ExampleTest {
         getWelcomeMessage();
         assertEquals(log.getLog(), ("Welcome to the Biblioteca library!\n"));
     }
-    @Test
-    public void should_return_bookList_after_get_welcomeMessage() {
-        log.clearLog();
-        bookList();
-        assertEquals(log.getLog(), ("1: BookName:firstBook BookAuthor:firstBookAuthor BookPublishedTime:2016\n" +
-                "2: BookName:secondBook BookAuthor:secondBookAuthor BookPublishedTime:2017\n"));
-    }
+
 
     @Test
     public void should_return_main_menu(){
         log.clearLog();
-        getMainMenu();
+
         assertEquals(log.getLog(),("List options:\n"+"BookList\n"));
     }
-    @Test
-    public void should_return_movieList() {
-        log.clearLog();
-        movieList();
-        assertEquals(log.getLog(), ("MovieName:secondMovie MovieYear:2016 MovieDirector:secondDirector MovieRating:5\n"+
-                "MovieName:firstMovie MovieYear:2017 MovieDirector:firstDirector MovieRating:4\n"
-                ));
-    }
+
 }

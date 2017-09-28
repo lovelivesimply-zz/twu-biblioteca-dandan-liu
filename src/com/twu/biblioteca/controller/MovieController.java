@@ -1,22 +1,24 @@
 package com.twu.biblioteca.controller;
 
-import com.twu.biblioteca.entity.Movie;
-import com.twu.biblioteca.respository.MovieRepository;
-
-import java.util.Map;
+import com.twu.biblioteca.service.MovieService;
 
 
 public class MovieController {
+    MovieService movieService=new MovieService();
     public  boolean checkoutMovie(String movieName){
-            MovieRepository movieRespository=new MovieRepository();
-            Map<String,Movie> movieTotal=movieRespository.getMovieRespository();
-            if(movieTotal.containsKey(movieName)){
-                movieTotal.remove(movieName);
+
+            if(movieService.checkoutMovie(movieName)){
                 return true;
             }else{
                 return false;
             }
 
         }
+    public  void movieList(){
+            movieService.movieList();
+    }
+    public  boolean returnMovie(String movieName){
+        return  movieService.returnMovie(movieName);
+    }
 }
 

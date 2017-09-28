@@ -7,7 +7,7 @@ public class MenuRepository {
     public  MenuRepository(){
         menuRepository.add("BookList");
         menuRepository.add("MovieList");
-        menuRepository.add("ReturnBook");
+        menuRepository.add("userInfo");
     }
     List<String> menuRepository=new ArrayList<String>();
 
