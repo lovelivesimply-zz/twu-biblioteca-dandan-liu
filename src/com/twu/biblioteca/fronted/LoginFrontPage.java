@@ -69,13 +69,18 @@ public class LoginFrontPage {
             System.out.println("Please input the valid index of menu you want to see: ");
         }
         int menuId=scanner.nextInt();
+
         if(menuId<1 && menuId >4){
-            switch (menuId){
-                case 1: bookFrontPage.getBookList();
-                case 2: movieFrontPage.getMovieList();
-                case 3:getuserInfo(userLibraryNum);
+            while(menuId<1 && menuId >4){
+                System.out.println("Please input the valid index of menu you want to see: ");
+                menuId=scanner.nextInt();
             }
+        }else{
+            if(menuId==1) bookFrontPage.getBookList();
+            if(menuId==2) movieFrontPage.getMovieList();
+            if(menuId==3) getuserInfo(userLibraryNum);
+        }
 
         }
-    }
+
 }

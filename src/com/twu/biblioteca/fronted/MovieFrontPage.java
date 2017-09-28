@@ -27,6 +27,15 @@ public  class MovieFrontPage {
 
     public void getMovieList(){
         movieController.movieList();
+        System.out.println("Please input 'checkout' or 'returnMovie'");
+        Scanner scanner=new Scanner(System.in);
+        String target=scanner.nextLine();
+        if("checkout".equals(target)){
+            checkoutMoviePage();
+        }
+        if("returnMovie".equals(target)){
+            returnMovie();
+        }
     }
     public void returnMovie(){
         System.out.println("Please input the movieName you want to return:");
@@ -39,6 +48,7 @@ public  class MovieFrontPage {
             }
             if(movieController.returnMovie(movieName)){
                 System.out.println("Thank you for return the movie!");
+                break;
             }else{
                 System.out.println("That is not a valid movie to return!");
                 System.out.println("Please input the movieName you want to return:");

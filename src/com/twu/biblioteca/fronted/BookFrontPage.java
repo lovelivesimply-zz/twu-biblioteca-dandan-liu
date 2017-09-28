@@ -26,18 +26,27 @@ public class BookFrontPage {
 
     public void getBookList(){
         bookController.getBookList();
+        System.out.println("Please input 'checkout' or 'returnBook'");
+        Scanner scanner=new Scanner(System.in);
+        String target=scanner.nextLine();
+        if("checkout".equals(target)){
+            checkoutBook();
+        }
+        if("returnBook".equals(target)){
+            returnBook();
+        }
     }
     public  void returnBook(){
         System.out.println("Please input the bookName you want to return:");
         Scanner scanner=new Scanner(System.in);
         while(scanner.hasNextLine()){
-
             String bookName=scanner.nextLine();
             if("Quit".equals(bookName)){
                 break;
             }
             if(bookController.returnBook(bookName)){
                 System.out.println("Thank you for return the Book!");
+                break;
             }else{
                 System.out.println("That is not a valid book to return!");
                 System.out.println("Please input the bookName you want to return:");
