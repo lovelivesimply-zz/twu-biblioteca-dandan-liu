@@ -3,10 +3,12 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.entity.Book;
 import com.twu.biblioteca.entity.Movie;
-import com.twu.biblioteca.fronted.LoginFrontPage;
+
+import com.twu.biblioteca.fronted.MovieFrontPage;
 import com.twu.biblioteca.respository.BookRespository;
 import com.twu.biblioteca.respository.MenuRepository;
 import com.twu.biblioteca.respository.MovieRepository;
+
 
 import java.util.Iterator;
 import java.util.List;
@@ -17,14 +19,14 @@ public class BibliotecaApp {
 
     public static void main(String[] args) {
 
-        LoginFrontPage.login();
+        MovieFrontPage.checkoutMoviePage();
     }
 
     public static void getDefaultInfoAfterLogin(){
         getWelcomeMessage();
         getMainMenu();
         getMenuDetail();
-        checkoutBook();
+
     }
     public static void getMenuDetail(){
         Scanner scanner=new Scanner(System.in);
@@ -51,48 +53,8 @@ public class BibliotecaApp {
     public static void getWelcomeMessage(){
         System.out.println("Welcome to the Biblioteca library!");
     }
-    public static void checkoutBook(){
-        System.out.println("Please input the bookName you want to checkout:");
-        Scanner scanner=new Scanner(System.in);
-        while (scanner.hasNextLine()){
-            System.out.println("Please input the bookName you want to checkout:");
-            String bookName=scanner.nextLine();
-            if("Quit".equals(bookName)){
-                break;
-            }
 
-            BookRespository bookRespository=new BookRespository();
-            Map<String,Book> bookTotal=bookRespository.getBookRespository();
-            if(bookTotal.containsKey(bookName)){
-                bookTotal.remove(bookName);
-                System.out.println("Thank you! Enjoy the book");
-            }else{
-                System.out.println("That book is not available.");
-            }
 
-        }
-    }
-    public static void checkoutMovie(){
-        System.out.println("Please input the movieName you want to checkout:");
-        Scanner scanner=new Scanner(System.in);
-        while (scanner.hasNextLine()){
-            System.out.println("Please input the movieName you want to checkout:");
-            String movieName=scanner.nextLine();
-            if("Quit".equals(movieName)){
-                break;
-            }
-
-            MovieRepository movieRespository=new MovieRepository();
-            Map<String,Movie> movieTotal=movieRespository.getMovieRespository();
-            if(movieTotal.containsKey(movieName)){
-                movieTotal.remove(movieName);
-                System.out.println("Thank you! Enjoy the Movie");
-            }else{
-                System.out.println("That movie is not available.");
-            }
-
-        }
-    }
     public static void returnBook(){
         System.out.println("Please input the bookName you want to return:");
         Scanner scanner=new Scanner(System.in);

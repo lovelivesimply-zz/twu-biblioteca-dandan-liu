@@ -9,8 +9,8 @@ public class MovieRepository {
     Map<String,Movie> movieRespository=new HashMap<String, Movie>();
     Map<String,Movie>  movieDB=new HashMap<String, Movie>();
     public MovieRepository(){
-        movieRespository.put("firstBook",new Movie("firstMovie","2017","firstDirector","4"));
-        movieRespository.put("secondBook",new Movie("secondMovie","2016","secondDirector","5"));
+        movieRespository.put("firstMovie",new Movie("firstMovie","2017","firstDirector","4"));
+        movieRespository.put("secondMovie",new Movie("secondMovie","2016","secondDirector","5"));
         movieDB.put("firstBook",new Movie("firstMovie","2017","firstDirector","4"));
         movieDB.put("secondBook",new Movie("secondMovie","2016","secondDirector","5"));
     }
