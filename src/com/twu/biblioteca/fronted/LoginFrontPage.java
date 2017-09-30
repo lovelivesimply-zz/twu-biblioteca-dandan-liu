@@ -17,14 +17,12 @@ public class LoginFrontPage {
     BookFrontPage bookFrontPage=new BookFrontPage();
     public  String login(){
         getWelcomeMessage();
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Please login:");
         System.out.println("library Number: ");
-        String libraryNum=scanner.nextLine();
+        String libraryNum = scanner.nextLine();
         System.out.println("password: ");
         String password=scanner.nextLine();
-
-
         User user=new User(libraryNum,password);
 
         while(!loginController.login(user)){
